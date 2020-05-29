@@ -7,22 +7,13 @@
 " -----------------------------------------------------------------------------
 
 " Supporting code -------------------------------------------------------------
-" Initialisation: {{{
-
-if version > 580
-  hi clear
-  if exists("syntax_on")
-    syntax reset
-  endif
-endif
 
 let g:colors_name='gruvbox'
 
-if !(has('termguicolors') && &termguicolors) && !has('gui_running') && &t_Co != 256
+if ! &termguicolors
   finish
 endif
 
-" }}}
 " Global Settings: {{{
 
 if !exists('g:gruvbox_bold')
@@ -63,10 +54,6 @@ endif
 
 if !exists('g:gruvbox_invert_indent_guides')
   let g:gruvbox_invert_indent_guides=0
-endif
-
-if exists('g:gruvbox_contrast')
-  echo 'g:gruvbox_contrast is deprecated; use g:gruvbox_contrast_light and g:gruvbox_contrast_dark instead'
 endif
 
 if !exists('g:gruvbox_contrast_dark')
@@ -1400,7 +1387,6 @@ hi! link jsonBraces GruvboxFg1
 hi! link jsonString GruvboxFg1
 
 " }}}
-
 
 " Functions -------------------------------------------------------------------
 " Search Highlighting Cursor {{{

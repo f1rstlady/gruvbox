@@ -7,8 +7,8 @@
 " -----------------------------------------------------------------------------
 
 function! s:getGruvColor(group)
-  let guiColor = synIDattr(hlID(a:group), "fg", "gui") 
-  let termColor = synIDattr(hlID(a:group), "fg", "cterm") 
+  let guiColor = synIDattr(hlID(a:group), "fg", "gui")
+  let termColor = synIDattr(hlID(a:group), "fg", "cterm")
   return [ guiColor, termColor ]
 endfunction
 
@@ -31,8 +31,8 @@ if exists('g:lightline')
   let s:p.normal.left = [ [ s:bg0, s:fg4, 'bold' ], [ s:fg4, s:bg2 ] ]
   let s:p.normal.right = [ [ s:bg0, s:fg4 ], [ s:fg4, s:bg2 ] ]
   let s:p.normal.middle = [ [ s:fg4, s:bg1 ] ]
-  let s:p.inactive.right = [ [ s:bg4, s:bg1 ], [ s:bg4, s:bg1 ] ]
   let s:p.inactive.left =  [ [ s:bg4, s:bg1 ], [ s:bg4, s:bg1 ] ]
+  let s:p.inactive.right = [ [ s:bg4, s:bg1 ], [ s:bg4, s:bg1 ] ]
   let s:p.inactive.middle = [ [ s:bg4, s:bg1 ] ]
   let s:p.insert.left = [ [ s:bg0, s:blue, 'bold' ], [ s:fg1, s:bg2 ] ]
   let s:p.insert.right = [ [ s:bg0, s:blue ], [ s:fg1, s:bg2 ] ]
